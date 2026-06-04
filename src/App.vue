@@ -85,7 +85,7 @@ const removeQuantity = (item) => {
 #app-container {
   width: 100%;
   min-height: 100vh;
-  background-color: #ede2cf;
+
   position: relative;
   display: flex;
   flex-direction: column;
