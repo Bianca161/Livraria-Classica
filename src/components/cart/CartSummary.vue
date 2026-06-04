@@ -1,5 +1,4 @@
 <script setup>
-
 const props = defineProps({
   totalProdutos: {
     type: Number,
@@ -14,8 +13,7 @@ const props = defineProps({
     
     <div class="summary-row">
       <span>produtos:</span>
-
-      <span>R${{ totalProdutos.toFixed(2) }}</span>
+      <span>R$ {{ totalProdutos.toFixed(2).replace('.', ',') }}</span>
     </div>
     
     <div class="summary-row border-bottom">
@@ -25,7 +23,7 @@ const props = defineProps({
     
     <div class="summary-row total-row">
       <span>Total:</span>
-      <strong>R${{ totalProdutos.toFixed(2) }}</strong>
+      <strong>R$ {{ totalProdutos.toFixed(2).replace('.', ',') }}</strong>
     </div>
 
     <button class="btn-checkout">Ir para pagamento</button>

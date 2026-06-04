@@ -1,5 +1,5 @@
 <script setup>
-
+// Define as props recebidas usando a nova sintaxe
 const props = defineProps({
   item: {
     type: Object,
@@ -7,24 +7,24 @@ const props = defineProps({
   }
 })
 
+// Define os emissores de eventos para alterar as quantidades
 const emit = defineEmits(['decrease-qty', 'increase-qty'])
 </script>
 
 <template>
   <div class="cart-item">
-
+    <!-- Informações do produto (Imagem, Título, Autor, Preço) -->
     <div class="product-info">
       <img :src="item.image" :alt="item.title" class="item-capa" />
-
       <div class="text-details">
         <h3 class="item-titulo">{{ item.title }}</h3>
         <p class="item-autor">{{ item.autor }}</p>
-        <p class="item-preco">R${{ item.preco.toFixed(2) }}</p>
+        <p class="item-preco">R${{ item.preco.toFixed(2).replace('.', ',') }}</p>
       </div>
     </div>
     
+    <!-- Seletor de Quantidade encapsulado como no Figma -->
     <div class="quantity-container">
-
       <div class="quantity-selector">
         <button class="qty-btn" @click="emit('decrease-qty', item)">-</button>
         <span class="qty-value">{{ item.quantidade }}</span>
@@ -32,11 +32,13 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
       </div>
     </div>
     
+    <!-- Subtotal do item específico -->
     <div class="item-subtotal">
-      R${{ (item.preco * item.quantidade).toFixed(2) }}
+      R${{ (item.preco * item.quantidade).toFixed(2).replace('.', ',') }}
     </div>
   </div>
 </template>
+
 
 <style scoped>
 
