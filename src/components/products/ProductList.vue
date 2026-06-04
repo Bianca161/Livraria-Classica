@@ -1,16 +1,15 @@
 <script setup>
 import { ref } from 'vue'
 import ProductCard from './ProductCard.vue'
-// CORREÇÃO DO CAMINHO: Agora voltando os níveis corretos de pastas baseados no seu projeto
+
 import { books } from '../../data/products.js'
 
 const bookList = ref(books)
 
-// Declara que este componente envia o evento de adicionar para o App.vue
 const emit = defineEmits(['add-to-cart'])
 
 const handleAddToCart = (product) => {
-  // Repassa o produto coletado do card diretamente para o pai (App.vue)
+
   emit('add-to-cart', product)
 }
 </script>
@@ -19,7 +18,6 @@ const handleAddToCart = (product) => {
   <div class="product-list-container">
     <h2 class="store-title">Nosso Catálogo de Livros</h2>
 
-    <!-- Grid organizada para exibir os livros lado a lado -->
     <div class="products-grid">
       <ProductCard
         v-for="item in bookList"
@@ -32,5 +30,23 @@ const handleAddToCart = (product) => {
 </template>
 
 <style scoped>
+.product-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: sans-serif;
+}
 
+.store-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #532222; 
+  margin-bottom: 30px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 30px;
+}
 </style>

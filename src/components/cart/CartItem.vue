@@ -1,5 +1,5 @@
 <script setup>
-// Define as props recebidas usando a nova sintaxe
+
 const props = defineProps({
   item: {
     type: Object,
@@ -7,13 +7,12 @@ const props = defineProps({
   }
 })
 
-// Define os emissores de eventos para alterar as quantidades
 const emit = defineEmits(['decrease-qty', 'increase-qty'])
 </script>
 
 <template>
   <div class="cart-item">
-    <!-- Informações do produto (Imagem, Título, Autor, Preço) -->
+
     <div class="product-info">
       <img :src="item.image" :alt="item.title" class="item-capa" />
       <div class="text-details">
@@ -22,8 +21,7 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
         <p class="item-preco">R${{ item.preco.toFixed(2).replace('.', ',') }}</p>
       </div>
     </div>
-    
-    <!-- Seletor de Quantidade encapsulado como no Figma -->
+  
     <div class="quantity-container">
       <div class="quantity-selector">
         <button class="qty-btn" @click="emit('decrease-qty', item)">-</button>
@@ -32,7 +30,6 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
       </div>
     </div>
     
-    <!-- Subtotal do item específico -->
     <div class="item-subtotal">
       R${{ (item.preco * item.quantidade).toFixed(2).replace('.', ',') }}
     </div>
@@ -41,5 +38,99 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
 
 
 <style scoped>
+.cart-item {
+  display: flex;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid #c9bca6; 
+}
 
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex: 2; 
+}
+
+.item-capa {
+  width: 70px;
+  height: 95px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); 
+}
+
+.text-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.item-titulo {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0;
+  color: #532222; 
+} 
+
+.item-autor {
+  font-size: 0.85rem;
+  color: #8a7667; 
+  margin: 0;
+}
+
+.item-preco {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #532222;
+  margin: 0;
+}
+
+.quantity-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  background-color: #e2d7c5; 
+  border: 1px solid #c9bca6;
+  border-radius: 25px; 
+  padding: 4px 12px;
+  gap: 14px;
+}
+
+.qty-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: #532222;
+  font-weight: bold;
+  padding: 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-btn:hover {
+  opacity: 0.7;
+}
+
+.qty-value {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #532222;
+  min-width: 15px;
+  text-align: center;
+}
+
+.item-subtotal {
+  flex: 1;
+  text-align: right;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #532222;
+}
 </style>

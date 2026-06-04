@@ -60,5 +60,125 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
 </template>
 
 <style scoped>
+.cart-page {
+  background-color: #ede2cf; 
+  min-height: 100vh;
+  width: 100%;
+  padding: 60px 20px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
 
+.cart-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cart-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #532222; 
+  margin-bottom: 40px;
+}
+
+.cart-container {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.cart-main {
+  flex: 2.5; 
+}
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #532222; 
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #532222;
+}
+
+.header-titulo {
+  flex: 2;
+}
+
+.header-quantidade {
+  flex: 1;
+  text-align: center;
+}
+
+.header-subtotal {
+  flex: 1;
+  text-align: right;
+}
+
+.cart-items {
+  margin-bottom: 30px;
+}
+
+.cart-footer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: flex-start;
+}
+
+.btn-back {
+  background: none;
+  border: 1.5px solid #532222;
+  color: #532222;
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: lowercase; 
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-back:hover {
+  background-color: rgba(83, 34, 34, 0.08);
+}
+
+.coupon-section {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.coupon-input {
+  flex: 1;
+  background: none;
+  border: 1.5px solid #532222;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  color: #532222;
+  border-radius: 4px;
+  outline: none;
+}
+
+.coupon-input::placeholder {
+  color: rgba(83, 34, 34, 0.6);
+}
+
+.btn-coupon {
+  background-color: #532222;
+  color: #ede2cf;
+  border: none;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+@media (max-width: 900px) {
+  .cart-container {
+    flex-direction: column;
+  }
+}
 </style>
