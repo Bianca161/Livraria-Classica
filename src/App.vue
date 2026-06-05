@@ -36,16 +36,13 @@ const removeQuantity = (item) => {
 }
 </script>
 
-<template>
+
+ <template>
   <div id="app-container">
     
     <div class="floating-navigation">
-      <button 
-        :class="{ active: currentScreen === 'vitrine' }" 
-        @click="currentScreen = 'vitrine'"
-      >
-        Vitrine
-      </button>
+      <!-- O botão Vitrine foi removido daqui -->
+      
       <button 
         :class="{ active: currentScreen === 'carrinho' }" 
         @click="currentScreen = 'carrinho'"
@@ -79,7 +76,6 @@ const removeQuantity = (item) => {
     </main>
   </div>
 </template>
-
 
 <style scoped>
 #app-container {
