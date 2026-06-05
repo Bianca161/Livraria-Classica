@@ -99,7 +99,7 @@ const removeQuantity = (item) => {
 }
 
 .floating-navigation button {
-  background-color: rgba(83, 34, 34, 0.08);
+  background-color: rgba(34, 36, 83, 0.08);
   color: #532222;
   border: 1px solid #532222;
   padding: 8px 18px;
@@ -122,7 +122,6 @@ const removeQuantity = (item) => {
 }
 
 .empty-cart-message {
-  background-color: #ede2cf;
   min-height: 70vh;
   display: flex;
   flex-direction: column;

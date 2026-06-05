@@ -83,12 +83,12 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
 
 .cart-container {
   display: flex;
+  flex-direction: column;
   gap: 50px;
-  align-items: flex-start;
 }
 
 .cart-main {
-  flex: 2.5; 
+  width: 100%; 
 }
 
 .cart-header {
@@ -176,9 +176,12 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
   text-transform: lowercase;
 }
 
-@media (max-width: 900px) {
-  .cart-container {
-    flex-direction: column;
-  }
+/* Novas regras para alinhar o resumo à direita e tirar o fundo claro */
+.custom-summary {
+  align-self: flex-end; 
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 20px 0 !important;
+  width: 100%;
 }
 </style>

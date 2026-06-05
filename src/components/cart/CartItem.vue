@@ -99,6 +99,7 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
   border-radius: 25px; 
   padding: 4px 12px;
   gap: 14px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .qty-btn {
