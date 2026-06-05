@@ -40,28 +40,47 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
             />
           </div>
 
-          <div class="cart-footer-actions">
-            <button class="btn-back" @click="emit('go-to-store')">
-              voltar a loja
-            </button>
+          <div class="footer-layout-container">
+            <div class="cart-footer-actions">
+              <button class="btn-back" @click="emit('go-to-store')">
+                voltar a loja
+              </button>
 
-            <div class="coupon-section">
-              <input type="text" placeholder="codigo de cumpom" class="coupon-input" />
-              <button class="btn-coupon">inserir cupom</button>
+              <div class="coupon-section">
+                <input type="text" placeholder="codigo de cumpom" class="coupon-input" />
+                <button class="btn-coupon">inserir cupom</button>
+              </div>
             </div>
+
+            <CartSummary :totalProdutos="cartTotal" />
           </div>
+          
+
         </div>
-
-        <CartSummary :totalProdutos="cartTotal" />
-
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
+.footer-layout-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; 
+  gap: 80px;
+  margin-top: 60px;
+  width: 100%;
+}
+
+.cart-footer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  align-items: flex-start;
+  flex: 1; 
+}
+
 .cart-page {
-  background-color: #ede2cf; 
   min-height: 100vh;
   width: 100%;
   padding: 60px 20px;
@@ -95,7 +114,7 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
   display: flex;
   align-items: center;
   padding-bottom: 12px;
-  border-bottom: 2px solid #532222; 
+  border-bottom: 2px solid #716b77; 
   font-size: 1.2rem;
   font-weight: 600;
   color: #532222;
@@ -176,12 +195,11 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
   text-transform: lowercase;
 }
 
-/* Novas regras para alinhar o resumo à direita e tirar o fundo claro */
 .custom-summary {
   align-self: flex-end; 
-  background-color: transparent !important;
-  box-shadow: none !important;
-  padding: 20px 0 !important;
+  background-color: transparent;
+  box-shadow: none;
+  padding: 20px 0;
   width: 100%;
 }
 </style>

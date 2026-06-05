@@ -42,7 +42,7 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
   display: flex;
   align-items: center;
   padding: 24px 0;
-  border-bottom: 1px solid #c9bca6; 
+  border-bottom: 2px solid #6F363A; 
 }
 
 .product-info {
@@ -53,8 +53,9 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
 }
 
 .item-capa {
-  width: 70px;
-  height: 95px;
+  width: 100px;
+  height: 140px;
+  border-radius: 4px;
   object-fit: cover;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); 
 }
@@ -66,15 +67,15 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
 }
 
 .item-titulo {
-  font-size: 1.05rem;
+  font-size: 1.3rem;
   font-weight: 700;
   margin: 0;
   color: #532222; 
 } 
 
 .item-autor {
-  font-size: 0.85rem;
-  color: #8a7667; 
+  font-size: 0.9rem;
+  color: #635449; 
   margin: 0;
 }
 
@@ -94,12 +95,12 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
 .quantity-selector {
   display: flex;
   align-items: center;
-  background-color: #e2d7c5; 
-  border: 1px solid #c9bca6;
-  border-radius: 25px; 
-  padding: 4px 12px;
+  background-color: #EDDDC4; 
+  border: 1px solid #cbb38a;
+  border-radius: 10px; 
+  padding: 8px 12px;
   gap: 14px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
 }
 
 .qty-btn {

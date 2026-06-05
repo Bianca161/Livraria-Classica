@@ -11,7 +11,7 @@ const props = defineProps({
   <aside class="cart-summary">
     <h2 class="summary-title">Total da compra</h2>
     
-    <div class="summary-row">
+    <div class="summary-row border-bottom">
       <span>produtos:</span>
       <span>R$ {{ totalProdutos.toFixed(2).replace('.', ',') }}</span>
     </div>
@@ -35,9 +35,9 @@ const props = defineProps({
   flex: 1;
   border: none;
   padding: 30px 24px;
-  background-color: #e2d7c5; 
+  background-color: #EDDDC4; 
   border-radius: 20px; 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  box-shadow: 1px 1px 1px 1px rgba(52, 46, 46, 0.641);
   max-width: 380px; 
 }
 
@@ -58,7 +58,7 @@ const props = defineProps({
 }
 
 .border-bottom {
-  border-bottom: 1px solid #c9bca6; 
+  border-bottom: 1.5px solid #532222; 
   padding-bottom: 16px;
   margin-bottom: 16px;
 }
@@ -70,7 +70,7 @@ const props = defineProps({
 }
 
 .frete-gratis {
-  color: #7d705a; 
+  color: #0e4139; 
   font-weight: normal;
 }
 
