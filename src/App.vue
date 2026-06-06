@@ -27,7 +27,7 @@ const handleAddToCartInApp = (product) => {
 
   setTimeout(() => {
     addedBookTitle.value = null
-  }, 9000)
+  }, 1000)
 }
 
 const addQuantity = (item) => {
