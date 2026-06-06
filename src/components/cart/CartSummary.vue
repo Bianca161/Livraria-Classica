@@ -10,17 +10,17 @@ const props = defineProps({
 <template>
   <aside class="cart-summary">
     <h2 class="summary-title">Total da compra</h2>
-    
+
     <div class="summary-row border-bottom">
       <span>produtos:</span>
       <span>R$ {{ totalProdutos.toFixed(2).replace('.', ',') }}</span>
     </div>
-    
+
     <div class="summary-row border-bottom">
       <span>Frete:</span>
       <span class="frete-gratis">Grátis</span>
     </div>
-    
+
     <div class="summary-row total-row">
       <span>Total:</span>
       <strong>R$ {{ totalProdutos.toFixed(2).replace('.', ',') }}</strong>
@@ -35,10 +35,10 @@ const props = defineProps({
   flex: 1;
   border: none;
   padding: 30px 24px;
-  background-color: #EDDDC4; 
-  border-radius: 20px; 
-  box-shadow: 1px 1px 1px 1px rgba(52, 46, 46, 0.641);
-  max-width: 380px; 
+  background-color: #EDDDC4;
+  border-radius: 20px;
+  box-shadow: 0 0 50px  rgba(0, 0, 0, 0.5);
+  max-width: 380px;
 }
 
 .summary-title {
@@ -46,7 +46,7 @@ const props = defineProps({
   margin-top: 0;
   margin-bottom: 25px;
   font-weight: 700;
-  color: #532222; 
+  color: #532222;
 }
 
 .summary-row {
@@ -54,11 +54,11 @@ const props = defineProps({
   justify-content: space-between;
   margin-bottom: 14px;
   font-size: 1rem;
-  color: #532222; 
+  color: #532222;
 }
 
 .border-bottom {
-  border-bottom: 1.5px solid #532222; 
+  border-bottom: 1.5px solid #532222;
   padding-bottom: 16px;
   margin-bottom: 16px;
 }
@@ -70,14 +70,14 @@ const props = defineProps({
 }
 
 .frete-gratis {
-  color: #0e4139; 
+  color: #0e4139;
   font-weight: normal;
 }
 
 .btn-checkout {
   width: 100%;
-  background-color: #693339; 
-  color: #f4edd9; 
+  background-color: #693339;
+  color: #f4edd9;
   border: none;
   padding: 14px;
   font-weight: 600;
@@ -89,7 +89,7 @@ const props = defineProps({
 }
 
 .btn-checkout:hover {
-  background-color: #54282d; 
+  background-color: #54282d;
 }
 
 .btn-checkout:active {

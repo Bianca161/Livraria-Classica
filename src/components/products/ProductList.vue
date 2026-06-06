@@ -40,7 +40,7 @@ const handleAddToCart = (product) => {
 .store-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #532222; 
+  color: #532222;
   margin-bottom: 30px;
 }
 
@@ -49,4 +49,5 @@ const handleAddToCart = (product) => {
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 30px;
 }
+
 </style>

@@ -29,58 +29,53 @@ const comprarLivro = () => {
 
 <style scoped>
 .product-card {
-  padding: 16px;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
-}
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: left;
 
-.product-image {
-  max-width: 100%;
-  height: 220px; 
-  object-fit: contain;
-  margin-bottom: 15px;
-}
+  & .product-title {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-weight: bold;
+    color: #6F363A;
+  }
+  & .product-author{
+    font-size: 1rem;
+    margin: 2px 0;
+    color: #455B68;
+  }
 
-.product-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #333;
-  margin: 0 0 8px 0;
-  min-height: 40px; 
-}
+  & .product-price {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    font-weight: bold;
+    color: #6F363A;
+  }
 
-.product-author {
-  font-size: 0.85rem;
-  color: #666;
-  margin: 0 0 15px 0;
-}
+  & img {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
 
-.product-price {
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: #532222; 
-  margin-bottom: 15px;
-}
+  & button {
+    background-color: #6F363A;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 
-.btn {
-  background-color: #693339;
-  color: #ede2cf; 
-  border: none;
-  padding: 10px 16px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: background-color 0.2s;
-  margin-top: auto;
-}
+  }
 
-.btn:hover {
-  background-color: #54282d; 
 }
 </style>

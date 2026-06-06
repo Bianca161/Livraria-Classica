@@ -21,7 +21,7 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
         <p class="item-preco">R${{ item.preco.toFixed(2).replace('.', ',') }}</p>
       </div>
     </div>
-  
+
     <div class="quantity-container">
       <div class="quantity-selector">
         <button class="qty-btn" @click="emit('decrease-qty', item)">-</button>
@@ -29,7 +29,7 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
         <button class="qty-btn" @click="emit('increase-qty', item)">+</button>
       </div>
     </div>
-    
+
     <div class="item-subtotal">
       R${{ (item.preco * item.quantidade).toFixed(2).replace('.', ',') }}
     </div>
@@ -42,14 +42,14 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
   display: flex;
   align-items: center;
   padding: 24px 0;
-  border-bottom: 2px solid #6F363A; 
+  border-bottom: 2px solid #6F363A;
 }
 
 .product-info {
   display: flex;
   align-items: center;
   gap: 25px;
-  flex: 2; 
+  flex: 2;
 }
 
 .item-capa {
@@ -57,7 +57,7 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
   height: 140px;
   border-radius: 4px;
   object-fit: cover;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); 
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 .text-details {
@@ -70,12 +70,12 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
   font-size: 1.3rem;
   font-weight: 700;
   margin: 0;
-  color: #532222; 
-} 
+  color: #532222;
+}
 
 .item-autor {
   font-size: 0.9rem;
-  color: #635449; 
+  color: #635449;
   margin: 0;
 }
 
@@ -95,12 +95,12 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
 .quantity-selector {
   display: flex;
   align-items: center;
-  background-color: #EDDDC4; 
+  background-color: #EDDDC4;
   border: 1px solid #cbb38a;
-  border-radius: 10px; 
+  border-radius: 10px;
   padding: 8px 12px;
   gap: 14px;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .qty-btn {
