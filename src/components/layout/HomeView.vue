@@ -1,8 +1,9 @@
 <script setup>
+import ProductList from '../ products/ProductList.vue';
 </script>
 
 <template>
-  <h1>Livraria</h1>
+  <ProductList />
 </template>
 
 <style scoped>

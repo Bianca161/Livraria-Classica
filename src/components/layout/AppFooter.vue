@@ -3,8 +3,7 @@
 </script>
 
 <template>
-  
-  <div class="footer">
+<footer>
     <div class="footer-content">
     <div class="redes">
       <p>
@@ -33,25 +32,24 @@
     </div>
     <hr>
       <p class="direitos">&copy; Alguns direitos reservados. classic books 2026. </p>
-  </div>
-
+</footer>
 </template>
 
 <style scoped>
-.footer{
+footer{
+  width: 100%;
   background-color: #6F363A;
   padding: 50px;
   text-align: center;
   color: #EDDDC4;
-  box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.37);
 
-  & .footer-content{
+  box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.37);
+   & .footer-content{
     display: flex;
     justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 90%;
     padding: 1rem 0;
-    
+
 
     & .redes{
       display: flex;

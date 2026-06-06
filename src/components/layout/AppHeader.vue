@@ -3,11 +3,84 @@
 
 <template>
   <header>
-    <h1>
-        <img src="/public/logo.png" alt="logo">
-    </h1>
+    <nav>
+      <h1>
+        <RouterLink to="/">
+            <img src="/logo.png" alt="Logo" class="logo">
+        </RouterLink>
+      </h1>
+      <div class="search-wrapper">
+        <input type="text" class="search" placeholder="Pesquisar..." />
+      </div>
+      <ul>
+        <li>Segurança</li>
+        <li>Sobre nós</li>
+        <li>Envio</li>
+        <li>Compras</li>
+      </ul>
+      <ul class="icons">
+        <li @click="showCart = !showCart"><span class="mdi mdi-cart-outline"></span></li>
+        <li> | <span class="mdi mdi-star"></span> | </li>
+        <li><span class="mdi mdi-account"></span></li>
+      </ul>
+    </nav>
   </header>
 </template>
 
 <style scoped>
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+
+  & h1 {
+    font-size: 1.3rem;
+    color: #000;
+  }
+
+  & input {
+    width: 400px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: 0;
+    background-color: rgba(184, 140, 78, 0.5);
+    padding: 5px;
+  }
+  & input::placeholder {
+    color: #372010;
+    margin: 0 5px;
+  }
+
+  & ul {
+    display: flex;
+    list-style: none;
+
+  &  li {
+    margin: 0 10px;
+    font-size: 15px;
+    color: #372010;
+    cursor: pointer;
+  }
+  }
+  & .icons{
+    margin: 0 25px;
+  &  li {
+    color: #6F363A;
+    font-size: 1.3rem;
+  }
+  }
+  & .search-wrapper {
+    position: relative;
+  }
+
+  & .search-wrapper::before {
+    font-size: 1.2rem;
+
+    right: 0.75rem;
+    top: 50%;
+  }
+}
+
 </style>
