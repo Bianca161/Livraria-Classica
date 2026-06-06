@@ -3,26 +3,33 @@ import { ref, computed } from 'vue'
 import ProductList from './components/products/ProductList.vue'
 import CartPanel from './components/cart/CartPanel.vue'
 
-const currentScreen = ref('vitrine') 
-
+const currentScreen = ref('vitrine')
 const mockCart = ref([])
 
+const addedBookTitle = ref(null)
+
 const calculateTotal = computed(() => {
-  return mockCart.value.reduce((acc, item) => acc + (item.preco * item.quantidade), 0)
+  return mockCart.value.reduce((acc, item) => acc + item.preco * item.quantidade, 0)
 })
 
 const handleAddToCartInApp = (product) => {
-  const existingItem = mockCart.value.find(item => item.id === product.id)
+  const existingItem = mockCart.value.find((item) => item.id === product.id)
+
   if (existingItem) {
     existingItem.quantidade++
+    addedBookTitle.value = `"${product.title}" já está no carrinho! `
   } else {
+    
     mockCart.value.push({ ...product, quantidade: 1 })
+
+    addedBookTitle.value = `"${product.title}" `
   }
-  
-  currentScreen.value = 'carrinho'
+
+  setTimeout(() => {
+    addedBookTitle.value = null
+  }, 9000)
 }
 
-// Funções de quantidade
 const addQuantity = (item) => {
   item.quantidade++
 }
@@ -31,31 +38,27 @@ const removeQuantity = (item) => {
   if (item.quantidade > 1) {
     item.quantidade--
   } else {
-    mockCart.value = mockCart.value.filter(cartItem => cartItem.id !== item.id)
+    mockCart.value = mockCart.value.filter((cartItem) => cartItem.id !== item.id)
   }
 }
 </script>
 
-
- <template>
+<template>
   <div id="app-container">
-    
+    <Transition name="fade">
+      <div v-if="addedBookTitle" class="toast-notification">
+        <strong>"{{ addedBookTitle }}"</strong> foi adicionado com sucesso ao carrinho!
+      </div>
+    </Transition>
+
     <div class="floating-navigation">
-      <!-- O botão Vitrine foi removido daqui -->
-      
-      <button 
-        :class="{ active: currentScreen === 'carrinho' }" 
-        @click="currentScreen = 'carrinho'"
-      >
+      <button :class="{ active: currentScreen === 'carrinho' }" @click="currentScreen = 'carrinho'">
         Carrinho ({{ mockCart.length }})
       </button>
     </div>
 
     <main class="main-content">
-      <ProductList 
-        v-if="currentScreen === 'vitrine'" 
-        @add-to-cart="handleAddToCartInApp"
-      />
+      <ProductList v-if="currentScreen === 'vitrine'" @add-to-cart="handleAddToCartInApp" />
 
       <div v-else-if="currentScreen === 'carrinho'">
         <div v-if="mockCart.length === 0" class="empty-cart-message">
@@ -64,9 +67,9 @@ const removeQuantity = (item) => {
           <button @click="currentScreen = 'vitrine'" class="btn-continue">Escolher Livros</button>
         </div>
 
-        <CartPanel 
+        <CartPanel
           v-else
-          :cartItems="mockCart" 
+          :cartItems="mockCart"
           :cartTotal="calculateTotal"
           @increase-qty="addQuantity"
           @decrease-qty="removeQuantity"
