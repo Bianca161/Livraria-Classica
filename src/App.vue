@@ -5,11 +5,9 @@ import AppHeader from './components/layout/AppHeader.vue';
 
 <template>
   <AppHeader />
-
   <RouterView />
   <AppFooter />
 </template>
 
 <style scoped>
-
 </style>

@@ -55,4 +55,5 @@ const books = [
         autor: 'Joaquim Manuel de Macedo',
         preco: 16.95
     }
-]
+];
+ export { books }

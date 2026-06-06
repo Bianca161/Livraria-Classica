@@ -14,12 +14,23 @@
       </div>
       <ul>
         <li>Segurança</li>
-        <li>Sobre nós</li>
+        <li>
+          <RouterLink to="/">
+            Sobre nós
+        </RouterLink>
+
+        </li>
         <li>Envio</li>
         <li>Compras</li>
       </ul>
       <ul class="icons">
-        <li @click="showCart = !showCart"><span class="mdi mdi-cart-outline"></span></li>
+        <div >
+
+    </div>
+        <li class="floating-navigation" >
+
+          <span class="mdi mdi-cart-outline"></span>
+        </li>
         <li> | <span class="mdi mdi-star"></span> | </li>
         <li><span class="mdi mdi-account"></span></li>
       </ul>
@@ -62,6 +73,10 @@ header nav {
     font-size: 15px;
     color: #372010;
     cursor: pointer;
+    & a{
+         color: #372010;
+         text-decoration: none;
+    }
   }
   }
   & .icons{
