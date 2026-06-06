@@ -1,4 +1,5 @@
 <script setup>
+defineEmits(['open-cart'])
 </script>
 
 <template>
@@ -6,7 +7,7 @@
     <nav>
       <h1>
         <RouterLink to="/">
-            <img src="/logo.png" alt="Logo" class="logo">
+          <img src="/logo.png" alt="Logo" class="logo">
         </RouterLink>
       </h1>
       <div class="search-wrapper">
@@ -15,20 +16,19 @@
       <ul>
         <li>Segurança</li>
         <li>
-          <RouterLink to="/">
+          <RouterLink to="/equipe">
             Sobre nós
-        </RouterLink>
+          </RouterLink>
 
         </li>
         <li>Envio</li>
         <li>Compras</li>
       </ul>
       <ul class="icons">
-        <div >
+        <div>
 
-    </div>
-        <li class="floating-navigation" >
-
+        </div>
+        <li class="floating-navigation" @click="$emit('open-cart')">
           <span class="mdi mdi-cart-outline"></span>
         </li>
         <li> | <span class="mdi mdi-star"></span> | </li>
@@ -46,8 +46,9 @@ header nav {
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
 
   & h1 {
-    font-size: 1.3rem;
-    color: #000;
+    & img {
+      width: 120px;
+    }
   }
 
   & input {
@@ -59,6 +60,7 @@ header nav {
     background-color: rgba(184, 140, 78, 0.5);
     padding: 5px;
   }
+
   & input::placeholder {
     color: #372010;
     margin: 0 5px;
@@ -68,24 +70,28 @@ header nav {
     display: flex;
     list-style: none;
 
-  &  li {
-    margin: 0 10px;
-    font-size: 15px;
-    color: #372010;
-    cursor: pointer;
-    & a{
-         color: #372010;
-         text-decoration: none;
+    & li {
+      margin: 0 10px;
+      font-size: 15px;
+      color: #372010;
+      cursor: pointer;
+
+      & a {
+        color: #372010;
+        text-decoration: none;
+      }
     }
   }
-  }
-  & .icons{
+
+  & .icons {
     margin: 0 25px;
-  &  li {
-    color: #6F363A;
-    font-size: 1.3rem;
+
+    & li {
+      color: #6F363A;
+      font-size: 1.3rem;
+    }
   }
-  }
+
   & .search-wrapper {
     position: relative;
   }
@@ -97,5 +103,4 @@ header nav {
     top: 50%;
   }
 }
-
 </style>

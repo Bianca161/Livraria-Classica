@@ -2,6 +2,8 @@
 import { ref, computed } from 'vue'
 import ProductList from '../products/ProductList.vue'
 import CartPanel from '../cart/CartPanel.vue'
+import Header from './AppHeader.vue'
+
 
 const currentScreen = ref('vitrine')
 const mockCart = ref([])
@@ -44,20 +46,13 @@ const removeQuantity = (item) => {
 </script>
 
 <template>
-  <div id="app-container">
-    <Transition name="fade">
-      <div v-if="addedBookTitle" class="toast-notification">
-        <strong>"{{ addedBookTitle }}"</strong> foi adicionado com sucesso ao carrinho!
-      </div>
-    </Transition>
 
-    <div class="floating-navigation">
-      <button :class="{ active: currentScreen === 'carrinho' }" @click="currentScreen = 'carrinho'">
-        Carrinho ({{ mockCart.length }})
-      </button>
-    </div>
+  <Header @open-cart="currentScreen = 'carrinho'" />
+
+  <div id="app-container">
 
     <main class="main-content">
+
       <ProductList v-if="currentScreen === 'vitrine'" @add-to-cart="handleAddToCartInApp" />
 
       <div v-else-if="currentScreen === 'carrinho'">
@@ -67,16 +62,11 @@ const removeQuantity = (item) => {
           <button @click="currentScreen = 'vitrine'" class="btn-continue">Escolher Livros</button>
         </div>
 
-        <CartPanel
-          v-else
-          :cartItems="mockCart"
-          :cartTotal="calculateTotal"
-          @increase-qty="addQuantity"
-          @decrease-qty="removeQuantity"
-          @go-to-store="currentScreen = 'vitrine'"
-        />
+        <CartPanel v-else :cartItems="mockCart" :cartTotal="calculateTotal" @increase-qty="addQuantity"
+          @decrease-qty="removeQuantity" @go-to-store="currentScreen = 'vitrine'" />
       </div>
     </main>
+
   </div>
 </template>
 

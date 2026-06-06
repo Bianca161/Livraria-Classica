@@ -44,7 +44,8 @@ const comprarLivro = () => {
     font-weight: bold;
     color: #6F363A;
   }
-  & .product-author{
+
+  & .product-author {
     font-size: 1rem;
     margin: 2px 0;
     color: #455B68;
