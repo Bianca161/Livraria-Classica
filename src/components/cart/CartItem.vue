@@ -16,9 +16,9 @@ const emit = defineEmits(['decrease-qty', 'increase-qty'])
     <div class="product-info">
       <img :src="item.image" :alt="item.title" class="item-capa" />
       <div class="text-details">
-        <h3 class="item-titulo">{{ item.title }}</h3>
-        <p class="item-autor">{{ item.autor }}</p>
-        <p class="item-preco">R${{ item.preco.toFixed(2).replace('.', ',') }}</p>
+        <h3 class="item-titulo">{{ props.item.title }}</h3>
+        <p class="item-autor">{{ props.item.autor }}</p>
+        <p class="item-preco">R${{ props.item.preco.toFixed(2).replace('.', ',') }}</p>
       </div>
     </div>
 

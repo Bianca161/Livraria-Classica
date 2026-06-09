@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({
+defineProps({
   totalProdutos: {
     type: Number,
     required: true

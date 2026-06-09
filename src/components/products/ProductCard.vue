@@ -1,4 +1,7 @@
 <script setup>
+
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const props = defineProps({
   product: {
     type: Object,
@@ -11,12 +14,16 @@ const emit = defineEmits(['add-to-cart'])
 const comprarLivro = () => {
   emit('add-to-cart', props.product)
 }
+
+const abrirLivro = () => {
+  router.push(`/livro/${props.product.id}`)
+}
 </script>
 
 <template>
-  <div class="product-card">
+  <div class="product-card"  >
 
-    <img :src="product.image" :alt="product.title" class="product-image" />
+    <img :src="product.image" :alt="product.title" class="product-image" @click="abrirLivro"/>
     <h3 class="product-title">{{ product.title }}</h3>
     <p class="product-author">{{ product.autor }}</p>
     <p class="product-price">R$ {{ product.preco.toFixed(2) }}</p>
@@ -44,7 +51,8 @@ const comprarLivro = () => {
     font-weight: bold;
     color: #6F363A;
   }
-  & .product-author{
+
+  & .product-author {
     font-size: 1rem;
     margin: 2px 0;
     color: #455B68;
@@ -61,6 +69,7 @@ const comprarLivro = () => {
     width: 100%;
     height: auto;
     margin-top: 10px;
+    cursor: pointer;
   }
 
   & button {

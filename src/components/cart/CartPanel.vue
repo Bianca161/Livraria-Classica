@@ -2,7 +2,7 @@
 import CartItem from './CartItem.vue'
 import CartSummary from './CartSummary.vue'
 
-const props = defineProps({
+ defineProps({
   cartItems: {
     type: Array,
     required: true
@@ -22,7 +22,7 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
       <h1 class="cart-title">Carrinho</h1>
 
       <div class="cart-container">
-        
+
         <div class="cart-main">
           <div class="cart-header">
             <span class="header-titulo">Título</span>
@@ -31,9 +31,9 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
           </div>
 
           <div class="cart-items">
-            <CartItem 
-              v-for="item in cartItems" 
-              :key="item.id" 
+            <CartItem
+              v-for="item in cartItems"
+              :key="item.id"
               :item="item"
               @increase-qty="emit('increase-qty', item)"
               @decrease-qty="emit('decrease-qty', item)"
@@ -54,7 +54,7 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
 
             <CartSummary :totalProdutos="cartTotal" />
           </div>
-          
+
 
         </div>
       </div>
@@ -66,7 +66,7 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
 .footer-layout-container {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; 
+  align-items: flex-start;
   gap: 80px;
   margin-top: 60px;
   width: 100%;
@@ -77,7 +77,7 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
   flex-direction: column;
   gap: 45px;
   align-items: flex-start;
-  flex: 1; 
+  flex: 1;
 }
 
 .cart-page {
@@ -96,7 +96,7 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
 .cart-title {
   font-size: 2rem;
   font-weight: 700;
-  color: #532222; 
+  color: #532222;
   margin-bottom: 40px;
 }
 
@@ -107,14 +107,14 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
 }
 
 .cart-main {
-  width: 100%; 
+  width: 100%;
 }
 
 .cart-header {
   display: flex;
   align-items: center;
   padding-bottom: 12px;
-  border-bottom: 2px solid #716b77; 
+  border-bottom: 2px solid #716b77;
   font-size: 1.2rem;
   font-weight: 600;
   color: #532222;
@@ -153,7 +153,7 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
   font-size: 0.95rem;
   border-radius: 4px;
   cursor: pointer;
-  text-transform: lowercase; 
+  text-transform: lowercase;
   font-weight: 500;
   transition: background 0.2s;
 }
@@ -196,7 +196,7 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
 }
 
 .custom-summary {
-  align-self: flex-end; 
+  align-self: flex-end;
   background-color: transparent;
   box-shadow: none;
   padding: 20px 0;
