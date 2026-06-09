@@ -1,5 +1,10 @@
 <script setup>
 import { ref } from 'vue'
+import ProductCard from './components/ products/ProductCard.vue'
+import ProductList from './components/ products/ProductList.vue'
+import CartItem from './components/cart/CartItem.vue' 
+import CartPanel from './components/cart/CartPanel.vue'
+import CartSummary from './components/cart/CartSummary.vue'
 
 const searchQuery = ref('')
 
@@ -11,14 +16,13 @@ const navigation = [
   { label: 'segurança', href: '#' },
   { label: 'sobre nós', href: '#' },
   { label: 'Envio', href: '#' },
-  { label: 'compras', href: '#' }
+  { label: 'compras', href: '#' },
 ]
 </script>
 
 <template>
   <header class="app-header">
     <div class="header-container">
-     
       <div class="logo-section">
         <img src="/logo.png" alt="Livraria Classica Logo" class="logo" />
       </div>
@@ -32,13 +36,11 @@ const navigation = [
             class="search-input"
             @keyup.enter="handleSearch"
           />
-          <button @click="handleSearch" class="search-button">
-            🔍
-          </button>
+          <button @click="handleSearch" class="search-button">🔍</button>
         </div>
       </div>
 
-      <!-- Navigation & Icons -->
+      
       <nav class="nav-section">
         <ul class="nav-menu">
           <li v-for="item in navigation" :key="item.label">
@@ -46,20 +48,14 @@ const navigation = [
           </li>
         </ul>
 
-        <!-- Icons -->
+        
+        
         <div class="icons-group">
-          <button class="icon-button" title="Segurança">
-            🛡️
-          </button>
-          <button class="icon-button" title="Favoritos">
-            ⭐
-          </button>
-          <button class="icon-button" title="Carrinho">
-            🛒
-          </button>
-          <button class="icon-button" title="Login">
-            👤
-          </button>
+          <i class="mdi mdi-cart-outline"></i>
+          <button class="icon-button" title="Segurança">🛡️</button>
+          <button class="icon-button" title="Favoritos">⭐</button>
+          <button class="icon-button" title="Carrinho">🛒</button>
+          <button class="icon-button" title="Login">👤</button>
         </div>
       </nav>
     </div>
@@ -99,40 +95,53 @@ const navigation = [
 .search-section {
   flex: 1;
   min-width: 200px;
+  width: 100%;
 }
 
 .search-wrapper {
   display: flex;
   align-items: center;
-  background-color: white;
-  border-radius: 4px;
+  width: 100%;
+  background-color: #e7d6bb;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.2rem;
+  box-shadow: inset 0 0 0 1px rgba(55, 32, 16, 0.1);
 }
 
 .search-input {
   flex: 1;
+  background: transparent;
   border: none;
-  padding: 0.75rem 1rem;
+  padding: 0.9rem 1rem;
   font-size: 0.95rem;
+  color: #372010;
   outline: none;
 }
 
 .search-input::placeholder {
-  color: #999;
+  color: #7d6347;
 }
 
 .search-button {
-  background-color: white;
+  background: transparent;
   border: none;
-  padding: 0.75rem 1rem;
+  border-left: 1px solid rgba(55, 32, 16, 0.12);
+  color: #372010;
+  width: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s;
+  font-size: 1.05rem;
+  transition:
+    background-color 0.2s,
+    transform 0.2s;
 }
 
 .search-button:hover {
-  background-color: #f0f0f0;
+  background-color: rgba(55, 32, 16, 0.08);
+  transform: scale(1.05);
 }
 
 .nav-section {
@@ -150,7 +159,7 @@ const navigation = [
 }
 
 .nav-link {
-  color: #4a4a4a;
+  color: #372010;
   text-decoration: none;
   font-size: 0.9rem;
   font-weight: 500;
@@ -164,24 +173,34 @@ const navigation = [
 
 .icons-group {
   display: flex;
-  gap: 1rem;
+  gap: 0.75rem;
   align-items: center;
 }
 
 .icon-button {
-  background: none;
-  border: none;
-  font-size: 1.3rem;
+  background-color: #f3e6d2;
+  border: 1px solid rgba(55, 32, 16, 0.12);
+  border-radius: 10px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: transform 0.3s;
-  padding: 0.5rem;
+  transition:
+    transform 0.2s,
+    background-color 0.2s,
+    border-color 0.2s;
+  padding: 0;
 }
 
 .icon-button:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  background-color: rgba(55, 32, 16, 0.08);
+  border-color: rgba(55, 32, 16, 0.2);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .header-container {
     flex-wrap: wrap;
@@ -222,4 +241,3 @@ const navigation = [
   }
 }
 </style>
-
