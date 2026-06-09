@@ -6,12 +6,13 @@
       <h3 class="outlined">Livro destaque</h3>
       <h2>Memórias Póstumas de Brás Cubas </h2>
       <p>
-        Neste clássico de Machado de Assis, acompanhe as reflexões irônicas e provocativas de Brás Cubas, um narrador
-        que decide contar sua história após a morte. Entre críticas à sociedade, amores, ambições e desilusões, Memórias
-        Póstumas de Brás Cubas revela, com inteligência e humor marcantes, um retrato profundo da humanidade e se
-        consagra como uma das obras mais importantes da literatura brasileira.
+        Narrado por um defunto autor, o romance apresenta as memórias de Brás Cubas. Com humor e sarcasmo, ele revisita sua vida e seus fracassos. A obra rompe padrões tradicionais da narrativa. Machado de Assis critica a sociedade brasileira do século XIX. Um marco do realismo nacional.
       </p>
-      <button>Acessar página do livro</button>
+      <button>
+        <RouterLink to="/livro/1">
+          Acessar página do livro
+        </RouterLink>
+      </button>
     </div>
     <div class="hero-image">
       <img src="/public/booksImgs/memoriasCubas.png" alt="Hero Image" />
@@ -63,11 +64,18 @@
       font-size: 1rem;
       transition: all 0.3s ease;
 
+      & a {
+        color: #6F363A;
+        text-decoration: none;
+      }
     }
 
     & button:hover {
       background-color: #6F363A;
       color: #ede2cf;
+      & a {
+        color: #ede2cf;
+      }
     }
   }
 
