@@ -11,6 +11,11 @@ const routes = [
     path: '/equipe',
     name: 'Team',
     component: () => import('@/components/layout/TeamView.vue'),
+  },
+  {
+    path: '/livro/:id',
+    name: 'book-detail',
+    component: () => import('@/components/layout/BookDetailView.vue'),
   }
 ];
 
