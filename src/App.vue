@@ -1,9 +1,12 @@
 <script setup>
+import AppFooter from './components/layout/AppFooter.vue';
+
 </script>
 
 <template>
-  <h1>Livraria Classica</h1>
+
+  <RouterView />
+  <AppFooter />
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
