@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import ProductCard from './components/ products/ProductCard.vue'
 import ProductList from './components/ products/ProductList.vue'
-import CartItem from './components/cart/CartItem.vue' 
+import CartItem from './components/cart/CartItem.vue'
 import CartPanel from './components/cart/CartPanel.vue'
 import CartSummary from './components/cart/CartSummary.vue'
 
@@ -36,11 +36,10 @@ const navigation = [
             class="search-input"
             @keyup.enter="handleSearch"
           />
-          <button @click="handleSearch" class="search-button">🔍</button>
+          <button @click="handleSearch" class="search-button" title="Lupa"><i class="mdi mdi-magnify"></i></button>
         </div>
       </div>
 
-      
       <nav class="nav-section">
         <ul class="nav-menu">
           <li v-for="item in navigation" :key="item.label">
@@ -48,14 +47,11 @@ const navigation = [
           </li>
         </ul>
 
-        
-        
         <div class="icons-group">
-          <i class="mdi mdi-cart-outline"></i>
-          <button class="icon-button" title="Segurança">🛡️</button>
-          <button class="icon-button" title="Favoritos">⭐</button>
-          <button class="icon-button" title="Carrinho">🛒</button>
-          <button class="icon-button" title="Login">👤</button>
+          <div class="icon-separator"></div>
+          <button class="icon-button" title="Favoritos"><i class="mdi mdi-star"></i></button>
+          <button class="icon-button" title="Carrinho"><i class="mdi mdi-cart-outline"></i></button>
+          <button class="icon-button" title="Login"><i class="mdi mdi-account"></i></button>
         </div>
       </nav>
     </div>
@@ -66,9 +62,13 @@ const navigation = [
 .app-header {
   background-color: #f5e6d3;
   border-bottom: 1px solid #d4a574;
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   z-index: 100;
+  box-sizing: border-box;
 }
 
 .header-container {
@@ -133,7 +133,7 @@ const navigation = [
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 1.05rem;
+  font-size: 1.45rem;
   transition:
     background-color 0.2s,
     transform 0.2s;
@@ -199,6 +199,13 @@ const navigation = [
   transform: scale(1.05);
   background-color: rgba(55, 32, 16, 0.08);
   border-color: rgba(55, 32, 16, 0.2);
+}
+
+.icon-separator {
+  width: 1px;
+  height: 24px;
+  background-color: rgba(55, 32, 16, 0.2);
+  margin: 0 0.5rem;
 }
 
 @media (max-width: 768px) {
