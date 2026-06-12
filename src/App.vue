@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import AppFooter from './components/layout/AppFooter.vue';
+import AppFooter from './components/layout/AppFooter.vue'
 
 const searchQuery = ref('')
 
@@ -14,7 +14,6 @@ const navigation = [
   { label: 'Envio', href: '#' },
   { label: 'compras', href: '#' },
 ]
-
 </script>
 
 <template>
@@ -33,11 +32,12 @@ const navigation = [
             class="search-input"
             @keyup.enter="handleSearch"
           />
-          <button @click="handleSearch" class="search-button" title="Lupa"><i class="mdi mdi-magnify"></i></button>
+          <button @click="handleSearch" class="search-button" title="Lupa">
+            <i class="mdi mdi-magnify"></i>
+          </button>
         </div>
       </div>
 
-      <RouterView />  
       <nav class="nav-section">
         <ul class="nav-menu">
           <li v-for="item in navigation" :key="item.label">
@@ -54,6 +54,7 @@ const navigation = [
       </nav>
     </div>
   </header>
+  <RouterView />
   <AppFooter />
 </template>
 
@@ -247,6 +248,5 @@ const navigation = [
   }
 }
 </style>
-
 
 <style scoped></style>

@@ -2,7 +2,6 @@
 import { ref, computed } from 'vue'
 import ProductList from '../products/ProductList.vue'
 import CartPanel from '../cart/CartPanel.vue'
-import Header from './AppHeader.vue'
 
 
 const currentScreen = ref('vitrine')
@@ -46,8 +45,6 @@ const removeQuantity = (item) => {
 </script>
 
 <template>
-
-  <Header @open-cart="currentScreen = 'carrinho'" />
 
   <div id="app-container">
 
