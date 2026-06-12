@@ -1,5 +1,4 @@
 <script setup>
-import appHeader from './AppHeader.vue'
 import { ref } from "vue";
 
 const membroSelecionado = ref(null);
@@ -31,7 +30,6 @@ function voltar() {
 }
 </script>
 <template>
-  <appHeader />
   <section class="nossoEquipe">
     <div class="titulo">
       <h2>Nossa Equipe</h2>

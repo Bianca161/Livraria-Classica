@@ -10,9 +10,9 @@ const handleSearch = () => {
 
 const navigation = [
   { label: 'segurança', href: '#' },
-  { label: 'sobre nós', href: '#' },
+  { label: 'sobre nós', href: '/equipe' },
   { label: 'Envio', href: '#' },
-  { label: 'compras', href: '#' },
+  { label: 'compras', href: '/carrinho' },
 ]
 </script>
 

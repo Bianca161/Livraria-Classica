@@ -17,6 +17,7 @@ const emit = defineEmits(['increase-qty', 'decrease-qty', 'go-to-store'])
 </script>
 
 <template>
+
   <div class="cart-page">
     <div class="cart-wrapper">
       <h1 class="cart-title">Carrinho</h1>

@@ -1,5 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '@/components/layout/HomeView.vue'
+import HomeView from '@/components/layout/HomeView.vue';
+import TeamView from '@/components/layout/TeamView.vue';
+import BookDetailView from '@/components/layout/BookDetailView.vue';
+import CartPanel from '@/components/cart/CartPanel.vue';
 
 
 const routes = [
@@ -11,12 +14,17 @@ const routes = [
   {
     path: '/equipe',
     name: 'Team',
-    component: () => import('@/components/layout/TeamView.vue'),
+    component: TeamView,
   },
   {
     path: '/livro/:id',
     name: 'book-detail',
-    component: () => import('@/components/layout/BookDetailView.vue'),
+    component: BookDetailView,
+  },
+  {
+    path: '/carrinho',
+    name: 'Cart',
+    component: CartPanel,
   }
 ];
 
