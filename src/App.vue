@@ -1,5 +1,6 @@
 <script setup>
 import { ref } from 'vue'
+import AppFooter from './components/layout/AppFooter.vue';
 
 const searchQuery = ref('')
 
@@ -13,6 +14,7 @@ const navigation = [
   { label: 'Envio', href: '#' },
   { label: 'compras', href: '#' },
 ]
+
 </script>
 
 <template>
@@ -35,6 +37,7 @@ const navigation = [
         </div>
       </div>
 
+      <RouterView />  
       <nav class="nav-section">
         <ul class="nav-menu">
           <li v-for="item in navigation" :key="item.label">
@@ -51,6 +54,7 @@ const navigation = [
       </nav>
     </div>
   </header>
+  <AppFooter />
 </template>
 
 <style scoped>
@@ -243,3 +247,6 @@ const navigation = [
   }
 }
 </style>
+
+
+<style scoped></style>
