@@ -4,6 +4,8 @@ import TeamView from '@/components/layout/TeamView.vue';
 import BookDetailView from '@/components/layout/BookDetailView.vue';
 import CartPanel from '@/components/cart/CartPanel.vue';
 import ProductList from '@/components/products/ProductList.vue';
+import CartItem from '@/components/cart/CartItem.vue';
+import CartSummary from '@/components/cart/CartSummary.vue';
 
 
 const routes = [
@@ -25,7 +27,7 @@ const routes = [
   {
     path: '/carrinho',
     name: 'Cart',
-    component: ProductList,
+    component: HomeView,
   }
 ];
 
