@@ -1,10 +1,5 @@
 <script setup>
 import { ref } from 'vue'
-import ProductCard from './components/ products/ProductCard.vue'
-import ProductList from './components/ products/ProductList.vue'
-import CartItem from './components/cart/CartItem.vue'
-import CartPanel from './components/cart/CartPanel.vue'
-import CartSummary from './components/cart/CartSummary.vue'
 
 const searchQuery = ref('')
 
