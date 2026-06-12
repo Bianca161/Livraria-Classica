@@ -20,7 +20,7 @@ const navigation = [
   <header class="app-header">
     <div class="header-container">
       <div class="logo-section">
-        <img src="/logo.png" alt="Livraria Classica Logo" class="logo" />
+        <img src="/logo.png" alt="Livraria Classica Logo" class="logo"/>
       </div>
 
       <div class="search-section">
